@@ -1,0 +1,84 @@
+@import 'src/utils/text';
+@import 'src/utils/media';
+
+.title {
+  .text-h2();
+  display: flex;
+  margin-top: 48px;
+  justify-content: center;
+}
+
+.first {
+  margin-bottom: 12px;
+}
+
+.block {
+  display: flex;
+  height: 100%;
+  background-color: var(--base-01);
+  flex-flow: column nowrap;
+  position: relative;
+  border-radius: var(--radius-l);
+  padding: 32px;
+
+  &__header {
+    .text-h4();
+    align-self: flex-start;
+  }
+
+  &__about {
+    .text-basic();
+    margin: 0;
+  }
+
+  &__number {
+    display: flex;
+    color: white;
+    width: 56px;
+    bottom: 56px;
+    height: 56px;
+    border-radius: var(--radius-m);
+    font-size: 24px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    position: relative;
+    background: var(--base-04);
+  }
+}
+
+*:has(.block) {
+  @media @mobile {
+    margin-bottom: 24px;
+  }
+
+  @media @tablet {
+    margin-bottom: 24px;
+  }
+}
+
+.lines {
+  list-style: url('/assets/icons/line.svg') inside;
+
+  li {
+    margin-bottom: 12px;
+  }
+
+  :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+}
+
+.firstpicture {
+  margin-bottom: 64px;
+}
+.icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 44px;
+}
