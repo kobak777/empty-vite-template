@@ -1,0 +1,130 @@
+@import 'src/utils/anim';
+@import 'src/utils/box-shadow';
+@import 'src/utils/media';
+
+header {
+  width: 100%;
+}
+.header {
+  background-color: var(--base-01);
+}
+
+.main-header {
+  background: var(--day-base-elevation-01);
+  box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+}
+.header-container {
+  display: flex;
+  max-width: 1104px;
+  width: 100%;
+  align-items: flex-start;
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1 0 0;
+}
+.left-log {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  align-self: stretch;
+}
+.navigation {
+  flex: 1 0;
+  height: 64px;
+  gap: 48px;
+
+  &__links {
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    margin-right: 24px;
+
+    @media @mobile {
+      flex-flow: column nowrap;
+      visibility: hidden;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-right: 24px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    & a {
+      display: inline-flex;
+      align-items: center;
+      height: 100%;
+      color: var(--text-02);
+
+      &:hover {
+        .transition(color);
+        color: var(--text-01);
+      }
+    }
+
+    &_active {
+      .box-shadow(0px, -3px, 0px, var(--base-05), true);
+
+      & a {
+        color: var(--text-01);
+      }
+    }
+  }
+}
+.right-points {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+}
+.login {
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  &-button {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+
+    &__name {
+      margin-right: 10px;
+      color: var(--text-link);
+      .transition(color, 1s);
+    }
+
+    &__icon {
+      display: flex;
+      fill: var(--text-link);
+      .transition(fill, 1s);
+    }
+
+    &:hover {
+      & .login-btn__name {
+        color: blueviolet;
+      }
+
+      & .login-btn__icon {
+        fill: blueviolet;
+      }
+    }
+  }
+}
